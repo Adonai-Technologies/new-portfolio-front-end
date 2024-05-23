@@ -7,5 +7,32 @@
 
 
 * {
-    font-family: 'Montserrat', sans-serif;
-  }
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+  background-color: #0A192F;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(4, 71, 73);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0f686e;
+}
+
+
+

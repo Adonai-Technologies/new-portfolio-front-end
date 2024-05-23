@@ -1,16 +1,15 @@
 import React from "react";
 import SectionTitle from "../Components/SectionTitle";
-import { experiences } from "../Resources/Experiences";
+import { courses } from "../Resources/Courses";
 
-function Experiences() {
+function Courses() {
 	const [selectedItemsIndex, setSelectedItemsIndex] = React.useState(0);
 	return (
 		<div>
-			<SectionTitle title='Experiences' />
-
+			<SectionTitle title='Courses' />
 			<div className='flex py-10 gap-20  sm:flex-col'>
 				<div className='flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full'>
-					{experiences.map((experience, index) => (
+					{courses.map((course, index) => (
 						<div
 							onClick={() => setSelectedItemsIndex(index)}
 							className='cursor-pointer'>
@@ -20,25 +19,29 @@ function Experiences() {
 										? "text-tertiary border-tertiary border-l-4 -ml-[3px] bg-[#1a7f5a31] py-3 sm:w-40"
 										: "text-white"
 								}`}>
-								{experience.period}
+								{course.title}
 							</h1>
 						</div>
 					))}
 				</div>
-				<div className='flex flex-col gap-5'>
-					<h1 className='text-secondary text-xl'>
-						{experiences[selectedItemsIndex].title}
-					</h1>
-					<h1 className='text-tertiary text-xl'>
-						{experiences[selectedItemsIndex].company}
-					</h1>
-					<p className='text-white'>
-						{experiences[selectedItemsIndex].description}
-					</p>
+				<div className='flex items-center gap-10 justify-center sm:flex-col '>
+					<div className='flex flex-col gap-5'>
+						<h1 className='text-secondary text-xl'>
+							{courses[selectedItemsIndex].title}
+						</h1>
+
+						<p className='text-white'>{courses[selectedItemsIndex].url}</p>
+                        
+					</div>
+					<img
+						src={courses[selectedItemsIndex].image}
+						alt=''
+						className='h-52 w-80'
+					/>
 				</div>
 			</div>
 		</div>
 	);
 }
 
-export default Experiences;
+export default Courses;
